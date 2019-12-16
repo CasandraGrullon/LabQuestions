@@ -88,7 +88,7 @@ struct LabQuestionsAPIClient {
     }
     
     // making a POST request - to send an answer to the Web API
-    static func postAnswer(postedAnswer: PostedAnswer) {
+    static func postAnswer(postedAnswer: PostedAnswer, completion: @escaping (Result<Bool, AppError>) -> ()) {
         
         let answerEndpointString = "https://5df04c1302b2d90014e1bd66.mockapi.io/answers"
         
@@ -130,11 +130,15 @@ struct LabQuestionsAPIClient {
             
             //use NetworkHelper ==> (URLSession wrap up class) to make the network POST request
             NetworkHelper.shared.performDataTask(with: request) { (result) in
-                <#code#>
+                switch result {
+                case .failure(let appError):
+                    completion(.failure(.networkClientError(appError)))
+                case .success:
+                    completion(.success(true))
+                }
             }
-            
         }catch{
-            
+            completion(.failure(.encodingError(error)))
         }
         
     }

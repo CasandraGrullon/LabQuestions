@@ -21,6 +21,16 @@ class QuestionDetailController: UIViewController {
         updateUI()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //we are segueing to another Navigation Controller
+        //we need to first segue to it then connect to its viewController.
+        guard let navController = segue.destination as? UINavigationController,
+            let answerQuestionVC = navController.viewControllers.first as? AnswerQuestionController  else {
+            fatalError("could not downcast to AnswerQuestionController")
+        }
+        answerQuestionVC.question = question
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         userImageView.layer.cornerRadius = userImageView.frame.size.width / 2

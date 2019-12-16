@@ -12,6 +12,8 @@ class AnswerQuestionController: UIViewController {
     
     @IBOutlet weak var answerTextView: UITextView!
     
+    var question: Question?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,8 +24,19 @@ class AnswerQuestionController: UIViewController {
     }
     
     @IBAction func postAnswer(_ sender: Any) {
+        guard let answerText = answerTextView.text,
+            !answerText.isEmpty,
+            let question = question else {
+            showAlert(title: "Missing Fields", message: "Answer is required")
+            return
+        }
+        
+        //created a PostedAnswer instance
+        let postedAnswer = PostedAnswer(questionTitle: question.title, questionId: question.id, questionLabName: question.labName, answerDescription: answerText)
         
     }
+
+    
     
     
 }
