@@ -18,9 +18,11 @@ class AnswerQuestionController: UIViewController {
     }
 
     @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true)
     }
     
     @IBAction func postAnswer(_ sender: Any) {
+        
     }
     
     
