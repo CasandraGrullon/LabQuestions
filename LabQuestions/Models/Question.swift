@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Question: Codable {
+struct Question: Decodable {
     let id: String
     let createdAt: String //date stamp
     let name: String //random user name

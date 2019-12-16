@@ -9,7 +9,7 @@
 import UIKit
 
 class LabQuestionsController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     private var refreshControl: UIRefreshControl!
@@ -30,11 +30,14 @@ class LabQuestionsController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let questionDetailVC = segue.destination as? QuestionDetailController, let indexPath = tableView.indexPathForSelectedRow else {
-            fatalError("segue issue")
+        if segue.identifier == "showQuestionDC" {
+            guard let questionDetailVC = segue.destination as? QuestionDetailController, let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("segue issue")
+            }
+            let questionPicked = questions[indexPath.row]
+            questionDetailVC.question = questionPicked
         }
-        let questionPicked = questions[indexPath.row]
-        questionDetailVC.question = questionPicked
+        
     }
     
     func configureRefreshControl(){
@@ -74,7 +77,7 @@ extension LabQuestionsController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
     }
- 
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath)
         let question = questions[indexPath.row]

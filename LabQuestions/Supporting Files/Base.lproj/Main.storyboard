@@ -175,24 +175,42 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMP-zi-HTi">
-                                <rect key="frame" x="20" y="257" width="374" height="585"/>
+                                <rect key="frame" x="20" y="277" width="374" height="269"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9i-jT-Ht3">
+                                <rect key="frame" x="20" y="245" width="374" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3Z-QJ-SYN">
+                                <rect key="frame" x="157" y="812" width="100" height="30"/>
+                                <state key="normal" title="Show Answers"/>
+                                <connections>
+                                    <segue destination="t2X-e0-LGb" kind="show" identifier="showAnswers" id="bqC-gt-8Nj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="s62-mF-saH" firstAttribute="top" secondItem="Ea4-Su-CpS" secondAttribute="bottom" constant="20" id="547-6d-fnr"/>
                             <constraint firstItem="Ea4-Su-CpS" firstAttribute="centerX" secondItem="dpm-dy-1qE" secondAttribute="centerX" id="BFk-I0-0W3"/>
+                            <constraint firstItem="wWj-Yq-j6z" firstAttribute="bottom" secondItem="J3Z-QJ-SYN" secondAttribute="bottom" constant="20" id="CKQ-o5-P0c"/>
+                            <constraint firstItem="wWj-Yq-j6z" firstAttribute="trailing" secondItem="Z9i-jT-Ht3" secondAttribute="trailing" constant="20" id="Cc1-YJ-Msn"/>
+                            <constraint firstItem="Z9i-jT-Ht3" firstAttribute="leading" secondItem="wWj-Yq-j6z" secondAttribute="leading" constant="20" id="Imw-HT-Cc5"/>
                             <constraint firstItem="s62-mF-saH" firstAttribute="leading" secondItem="wWj-Yq-j6z" secondAttribute="leading" constant="20" id="Knq-yS-rgB"/>
-                            <constraint firstItem="wWj-Yq-j6z" firstAttribute="bottom" secondItem="lMP-zi-HTi" secondAttribute="bottom" constant="20" id="VGG-ed-mBv"/>
-                            <constraint firstItem="lMP-zi-HTi" firstAttribute="leading" secondItem="wWj-Yq-j6z" secondAttribute="leading" constant="20" id="ajx-T3-d5p"/>
-                            <constraint firstItem="lMP-zi-HTi" firstAttribute="top" secondItem="s62-mF-saH" secondAttribute="bottom" constant="20" id="eYN-xV-Cfm"/>
+                            <constraint firstItem="J3Z-QJ-SYN" firstAttribute="centerX" secondItem="dpm-dy-1qE" secondAttribute="centerX" id="OFT-rW-dzu"/>
+                            <constraint firstItem="Z9i-jT-Ht3" firstAttribute="top" secondItem="s62-mF-saH" secondAttribute="bottom" constant="8" id="R1V-4x-mh3"/>
+                            <constraint firstItem="lMP-zi-HTi" firstAttribute="height" secondItem="dpm-dy-1qE" secondAttribute="height" multiplier="0.3" id="RZj-mb-M0O"/>
+                            <constraint firstItem="wWj-Yq-j6z" firstAttribute="trailing" secondItem="lMP-zi-HTi" secondAttribute="trailing" constant="20" id="T0z-4q-D6r"/>
                             <constraint firstItem="wWj-Yq-j6z" firstAttribute="trailing" secondItem="s62-mF-saH" secondAttribute="trailing" constant="20" id="hrk-Sb-pUg"/>
-                            <constraint firstItem="wWj-Yq-j6z" firstAttribute="trailing" secondItem="lMP-zi-HTi" secondAttribute="trailing" constant="20" id="pau-vZ-Ca0"/>
+                            <constraint firstItem="lMP-zi-HTi" firstAttribute="top" secondItem="Z9i-jT-Ht3" secondAttribute="bottom" constant="8" id="j66-KT-eqc"/>
+                            <constraint firstItem="lMP-zi-HTi" firstAttribute="leading" secondItem="wWj-Yq-j6z" secondAttribute="leading" constant="20" id="qRp-CL-IOj"/>
                             <constraint firstItem="Ea4-Su-CpS" firstAttribute="top" secondItem="wWj-Yq-j6z" secondAttribute="top" constant="20" id="veO-u7-0sk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wWj-Yq-j6z"/>
@@ -200,19 +218,70 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="8Tc-PR-CSv">
                         <barButtonItem key="rightBarButtonItem" title="Answer" id="ub9-my-kac">
                             <connections>
-                                <segue destination="HFu-Jz-xNe" kind="presentation" id="UBj-XO-QDy"/>
+                                <segue destination="HFu-Jz-xNe" kind="presentation" identifier="showAnswerQuestion" id="UBj-XO-QDy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="labNameLabel" destination="s62-mF-saH" id="D0P-FZ-CKc"/>
                         <outlet property="questionTextView" destination="lMP-zi-HTi" id="hnm-eT-dFO"/>
+                        <outlet property="questionTitleLabel" destination="Z9i-jT-Ht3" id="o3E-BY-ahn"/>
                         <outlet property="userImageView" destination="Ea4-Su-CpS" id="Elh-tl-fcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhQ-8a-nkA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="145"/>
+            <point key="canvasLocation" x="-55.072463768115945" y="144.64285714285714"/>
+        </scene>
+        <!--Answers-->
+        <scene sceneID="FY6-ye-mj0">
+            <objects>
+                <viewController id="t2X-e0-LGb" customClass="AnswersViewController" customModule="LabQuestions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gaK-OK-F10">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lyK-0H-XxD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="answerCell" textLabel="0iy-Eh-c9b" style="IBUITableViewCellStyleDefault" id="Rgb-Ah-Fjj">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rgb-Ah-Fjj" id="FnF-Fn-3UK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0iy-Eh-c9b">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0PR-E6-e5R" firstAttribute="bottom" secondItem="lyK-0H-XxD" secondAttribute="bottom" id="baQ-KX-AqO"/>
+                            <constraint firstItem="lyK-0H-XxD" firstAttribute="top" secondItem="0PR-E6-e5R" secondAttribute="top" id="gwC-To-D3M"/>
+                            <constraint firstItem="lyK-0H-XxD" firstAttribute="leading" secondItem="0PR-E6-e5R" secondAttribute="leading" id="jq9-xe-BbW"/>
+                            <constraint firstItem="0PR-E6-e5R" firstAttribute="trailing" secondItem="lyK-0H-XxD" secondAttribute="trailing" id="s1Q-ZJ-63K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0PR-E6-e5R"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Answers" id="V95-vQ-QUf"/>
+                    <connections>
+                        <outlet property="tableView" destination="lyK-0H-XxD" id="kMY-4T-OJN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bwj-Vp-e0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696" y="145"/>
         </scene>
         <!--Answer Question-->
         <scene sceneID="UPC-H6-svR">
@@ -265,7 +334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwX-OE-fNk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671" y="145"/>
+            <point key="canvasLocation" x="696" y="812"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dYR-jm-CCC">
